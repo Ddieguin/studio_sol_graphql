@@ -1,0 +1,42 @@
+Definição do Problema: 
+	Dada uma palavra contínua, e um conjunto de regras, Joaquim precisa verificar se a senha é válida
+	baseada nas regras pedida
+
+
+Regras possíveis:
+	● minSize: tem pelo menos x caracteres.
+	● minUppercase: tem pelo menos x caracteres maiúsculos
+	● minLowercase: tem pelo menos x caracteres minúsculos
+	● minDigit: tem pelo menos x dígitos (0-9)
+	● minSpecialChars: tem pelo menos x caracteres especiais ( Os caracteres especiais são os
+	caracteres da seguinte string: "!@#$%^&*()-+\/{}[]" )
+	● noRepeted: não tenha nenhum caracter repetido em sequência ( ou seja, "aab" viola esta
+	condição, mas "aba" não)
+
+
+
+Explicação:
+	Dado uma string como entrada preciso retornar se a mesma string e uma senha valida seguindo 
+	as regras solicitadas, portanto, para cada regra valida eu implementei um determinada função 
+	para lidar com a regra em si. Explicando cada função com a sua respetiva regra, minSize, como e apenas 
+	para validar o tamanho apenas apliquei um operador ternário para validar se a string tem tamanho valido
+	com a utilização do string.length  minSize ? false : true. minUppercase, para validar o número min de caracteres
+	com letra maiscula apliquei uma busca sequencial de custo O(str.length), utilizei a tabela 
+	ASCII (char_upper esta compreendido entre 65 e 90) para validar e no final da função apenas valido foi-se encontrado numero min solicitado, 
+	caso contrario retorno false. minLowerCase a ideia e similar ao UpperCase uma vez que so altera o intervalo na tabela ASCII (char_lower compreendido entre 97 e 122). minDigit, nessa função em si, apliquei parse para Number 
+	e depois validando se o digito e um inteiro (isInteger()) e nao um NAN(not a number) nesse caso 
+	para letras. minSpecialChars apliquei também uma busca sequencial para validar carácter por carácter, portanto criei um array de caracteres especiais, portanto em cada laço de repetição valido se o carácter corrente esta presente no array de caracteres especiais, se estiver presente contabilizo +1 a variável number_of_caracters_specials, portanto essa funcao e o mais custosos de todo, uma vez que preciso percorrer dois array e cada laço preciso percorrer em uma outra busca sequencial para ver se o carácter esta presente no array de caracteres especiais O(str.length * array_caracter_specials.length). noRepeat, para validar essa regra em especifico apenas validei se o caracter corrente e igual ao carácter anterior, pois só seria não valido se dois dos mesmo caracteres estiverem repetidos sequencialmente como (aa, &&, ^^), para o custo dessa função e apenas uma busca sequencial com custo de memoria utilizando duas variáveis temporárias para guarda o estado do carácter anterior e o carácter atual, portanto apenas comparando se o mesmo (carácter anterior) repeti no próximo laço de repetição.
+
+
+Custo Computacional de cada função ou análise de custo computacional:
+	minSize: O(str.length)
+	minUpperCase: O(str.length)
+	minLowerCase: O(str.length)
+	minDigit: O(str.length)
+	minSpecialChars: O(str.length * array_char_specials.length)
+	noRepeat: O(str.length)
+
+	obs.: o custo dos métodos são sempre similares, uma vez que os (mesmo) utilizaram a mesma lógica de percorrer uma array de caracteres. Busca sequencial sendo o algoritmo de busca mais simples.
+	
+
+	Portanto, a implementação não tem como fugir dessa lógica, acredito sendo o caminho "ótimo" no sentido de custo computacional.

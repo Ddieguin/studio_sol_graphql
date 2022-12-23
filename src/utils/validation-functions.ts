@@ -30,9 +30,8 @@ function verify_min_upper_case(str, min_upper_case) {
   let number_of_char_upper = 0;
 
   for (const char of str) {
-    if (char.toUpperCase() === char) {
+    if (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90)
       number_of_char_upper++;
-    }
   }
 
   return number_of_char_upper < min_upper_case ? false : true;
@@ -48,9 +47,8 @@ function verify_min_lower_case(str, min_lower_case) {
   let number_of_char_lower = 0;
 
   for (const char of str) {
-    if (char.toLowerCase() === char) {
+    if (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122)
       number_of_char_lower++;
-    }
   }
 
   return number_of_char_lower < min_lower_case ? false : true;
