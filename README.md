@@ -57,6 +57,9 @@ $ docker-compose up dev
 # production enviroment
 $ docker-compose up prod
 
+# open in your browser
+$ http://localhost:8080/graphql
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
