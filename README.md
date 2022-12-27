@@ -51,12 +51,11 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
+# developer enviroment
+$ docker-compose up dev
 
-# test coverage
-$ npm run test:cov
-```
+# production enviroment
+$ docker-compose up prod
 
 ## Support
 
@@ -71,3 +70,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+```

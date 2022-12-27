@@ -12,9 +12,7 @@ export class PasswordsService {
         throw new Error('the selected rule is invalid');
       }
     }
-    return noMatch.length
-      ? { verify: false, noMatch }
-      : { verify: true, noMatch: [] };
+    return noMatch;
   }
 }
 

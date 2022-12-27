@@ -8,6 +8,10 @@ export class PasswordResolver {
 
   @Query(() => PasswordValidationResponse)
   verify(@Args('password') password: string, @Args('rules') rules: Rule[]) {
-    return this.passwordService.verify(password, rules);
+    const noMatch = this.passwordService.verify(password, rules);
+
+    return noMatch.length
+      ? { verify: false, noMatch }
+      : { verify: true, noMatch: [] };
   }
 }
