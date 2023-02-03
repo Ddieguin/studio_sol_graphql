@@ -111,7 +111,7 @@ function verify_min_special_chars(str, min_special_chars) {
 export const validationFunctions = {
   minSize: verify_min_size,
   minSpecialChars: verify_min_special_chars,
-  noRepeted: verify_char_repeated,
+  noRepeated: verify_char_repeated,
   minDigit: verify_min_digit,
   minLowercase: verify_min_lower_case,
   minUppercase: verify_min_upper_case,
