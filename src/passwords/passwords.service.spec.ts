@@ -16,7 +16,7 @@ describe('PasswordsService', () => {
     const rules_array = [
       { rule: 'minSize', value: 8 },
       { rule: 'minSpecialChars', value: 2 },
-      { rule: 'noRepeted', value: 0 },
+      { rule: 'noRepeated', value: 0 },
       { rule: 'minDigit', value: 4 },
     ];
 
@@ -33,7 +33,7 @@ describe('PasswordsService', () => {
     const rules_array = [
       { rule: 'minSize', value: 8 },
       { rule: 'minSpecialChars', value: 2 },
-      { rule: 'noRepeted', value: 0 },
+      { rule: 'noRepeated', value: 0 },
       { rule: 'minDigit', value: 4 },
     ];
 
